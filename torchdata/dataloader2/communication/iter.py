@@ -442,6 +442,8 @@ class _IterateQueueDataPipes(IterDataPipe):
                             self._request_cnt += 1
                             total_req_cnt += 1
                     total_res_cnt += 1
+                else:
+                    req_idx = next(req_idx_cycle)
                 res_idx = next(res_idx_cycle)
                 if not disabled:
                     yield response.value
